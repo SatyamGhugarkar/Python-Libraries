@@ -22,4 +22,8 @@ param_grid = {
 from sklearn.model_selection import GridSearchCV
  
 grid = GridSearchCV(pipe, param_grid, cv=5)
+
 grid.fit(X_train, y_train)
+
+print("Params:", grid.best_params_)
+print("Accuracy:", grid.score(X_test, y_test))
